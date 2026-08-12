@@ -1,150 +1,267 @@
-Prywatny Menedżer Haseł – Pełna Dokumentacja Projektu
-1. Wprowadzenie
-Ten dokument opisuje kompletny projekt prywatnego menedżera haseł działającego na Windows i Android, z pełną synchronizacją P2P, pendrive jako głównym magazynem danych oraz lokalną kopią na telefonie. System jest zaprojektowany tak, aby działał bez chmury, bez serwera, bez API i bez ryzyka wycieku danych.
+Calisto Vault to nowoczesny, bezpieczny i w pełni prywatny menedżer haseł działający na Windows i Android, z opcjonalnym wsparciem dla pendrive MASTER oraz synchronizacją P2P bez chmury. Aplikacja oferuje automatyczne i ręczne sprawdzanie aktualizacji, pełne szyfrowanie oraz tryby działania dopasowane do każdego użytkownika.
 
-2. Architektura Systemu
-2.1 Elementy
-Pendrive (MASTER) – główna baza danych.
+🛡️ Calisto Vault — Bezpieczny Menedżer Haseł Offline
+Calisto Vault to wieloplatformowy system zarządzania hasłami zaprojektowany z myślą o prywatności, bezpieczeństwie i elastyczności.
+Aplikacja działa w różnych trybach — od pełnej konfiguracji Windows + Android + Pendrive MASTER, aż po tryby solo dla użytkowników, którzy chcą korzystać tylko z jednego urządzenia.
 
-Laptop (Windows) – praca na bazie z pendrive, integracja z przeglądarką.
+⭐ Najważniejsze funkcje
+Szyfrowanie: AES‑256‑GCM
 
-Telefon (Android) – lokalna kopia bazy, autofill, logowanie poza domem.
+KDF: Argon2id
 
-Synchronizacja P2P – bezpośrednie połączenie telefon ↔ laptop przez Internet.
+Baza danych: SQLCipher
 
-2.2 Przepływ danych
-Pendrive (MASTER)
-↑ ↓
-Laptop Windows
-↑ ↓
-Synchronizacja P2P
-↑ ↓
-Telefon Android
+Pendrive MASTER: fizyczny klucz bezpieczeństwa
 
-3. Bezpieczeństwo
-3.1 Szyfrowanie
-AES-256-GCM – szyfrowanie bazy.
+Synchronizacja P2P: bez serwera, bez chmury
 
-Argon2id – generowanie klucza.
+Autofill na Androidzie
 
-SQLCipher – szyfrowana baza SQLite.
+Testowanie loginów
 
-E2EE – pełne szyfrowanie synchronizacji.
+Działanie offline
 
-3.2 Brak ryzyka wycieku
-Brak serwera.
+Nowoczesny UI Windows + Android
 
-Brak chmury.
+Logi diagnostyczne (w ustawieniach)
 
-Brak API.
+Automatyczne i ręczne sprawdzanie aktualizacji aplikacji
 
-Brak logów.
+Tryby działania wybierane przy pierwszym uruchomieniu
 
-4. Struktura Plików
-4.1 Pendrive (MASTER)
-/vault/
-passwords.db
-master.key
-sync.json
+🔧 Tryby działania
+Przy pierwszym uruchomieniu użytkownik wybiera tryb:
 
-4.2 Telefon (LOCAL COPY)
-/local/
-passwords.db
-device.key
+Pełny: Windows + Android + Pendrive MASTER
 
-5. Format Bazy Danych
-site_url – adres strony
+Windows + Pendrive
 
-login_url – adres logowania
+Android + Pendrive
 
-username – login
+Windows solo
 
-password_enc – zaszyfrowane hasło
+Android solo
 
-form_user_field – nazwa pola loginu
+Windows + Android (bez pendrive)
 
-form_pass_field – nazwa pola hasła
+Każdy tryb działa niezależnie i bezpiecznie.
 
-status – OK / błędne / nieznane
+💾 Pendrive MASTER
+Pendrive MASTER:
 
-last_check – data ostatniego testu
+przechowuje zaszyfrowaną bazę SQLCipher,
 
-6. Synchronizacja P2P
-6.1 Założenia
-Działa przez Internet (LTE ↔ Wi-Fi).
+przechowuje klucz master.key,
 
-Nie wymaga tej samej sieci.
+umożliwia przywracanie danych,
 
-Brak serwera i chmury.
+integruje się z Windows i Android (OTG),
 
-Połączenie bezpośrednie.
+może być głównym źródłem danych w trybie pełnym.
 
-6.2 Proces
-Laptop uruchamia moduł P2P.
+🔄 Synchronizacja P2P
+Synchronizacja P2P:
 
-Telefon łączy się przez Internet.
+działa bez serwera i bez chmury,
 
-Telefon wysyła zmiany.
+wykorzystuje E2EE,
 
-Laptop aktualizuje pendrive.
+może działać lokalnie lub przez Internet,
 
-Laptop wysyła główną bazę.
+automatycznie wykrywa zmiany,
 
-Telefon nadpisuje swoją kopię.
+rozwiązuje konflikty w bezpieczny sposób.
 
-7. Aplikacja Windows
-7.1 Funkcje
-Praca na pendrive.
+🖥️ Aplikacja Windows
+Electron + Node.js
 
-Integracja z przeglądarką.
+ciemny motyw, fiolet + złoto
 
-Automatyczne przechwytywanie haseł.
+lista haseł + szczegóły
 
-Sprawdzanie loginów.
+testowanie loginów
 
-Synchronizacja P2P.
+integracja z pendrive MASTER
 
-7.2 Testowanie loginów
-Wysyłanie testowego logowania i analiza odpowiedzi serwera.
+synchronizacja P2P
 
-8. Aplikacja Android
-8.1 Funkcje
-Lokalna kopia bazy.
+logi diagnostyczne
 
-Autofill API.
+sekcja: Informacje / Bezpieczeństwo / Autor
 
-Logowanie offline.
+automatyczne i ręczne sprawdzanie aktualizacji
 
-Zmiana haseł poza domem.
+📱 Aplikacja Android
+Kotlin
 
-Synchronizacja P2P.
+Autofill API
 
-8.2 Działanie poza domem
-Telefon działa samodzielnie, zapisuje zmiany lokalnie.
+ciemny motyw, fiolet + złoto
 
-9. Integracja z Przeglądarką
-Blokowanie zapisywania haseł.
+lista haseł w formie kart
 
-Przechwytywanie formularzy.
+szczegóły wpisu z dużymi polami
 
-Zapisywanie danych na pendrive.
+synchronizacja P2P
 
-10. Scenariusze Użycia
-10.1 Logowanie poza domem
-Telefon ma lokalną kopię i autofill.
+integracja z pendrive MASTER (OTG)
 
-10.2 Zmiana hasła poza domem
-Zmiana zapisywana lokalnie, synchronizacja w domu.
+sekcja: Informacje / Bezpieczeństwo / Autor
 
-10.3 Synchronizacja
-Laptop ↔ telefon przez Internet, pendrive aktualizowany.
+automatyczne i ręczne sprawdzanie aktualizacji
 
-11. Ograniczenia
-Brak automatycznej synchronizacji.
+🎨 UI — Windows i Android
+nowoczesny, lekki, bez animacji
 
-Wymagany minimalny Internet.
+ciemny motyw
 
-Pendrive musi być podpięty do laptopa.
+białe napisy
 
-12. Podsumowanie
-Projekt zapewnia maksymalne bezpieczeństwo, pełną prywatność, działanie offline i online, brak chmury, brak serwera, pełną kontrolę nad danymi oraz niezawodną synchronizację P2P.
+akcenty: fiolet + złoto
+
+minimalistyczne ikony
+
+zbliżony układ na Windows i Android, żeby użytkownik czuł się „u siebie” na obu platformach.
+
+🔔 Aktualizacje aplikacji (EXE/APK)
+Calisto Vault obsługuje aktualizacje aplikacji, nie bazy haseł.
+
+Automatyczne sprawdzanie aktualizacji
+aplikacja okresowo pobiera z GitHub plik version.json,
+
+porównuje wersję lokalną z wersją dostępną,
+
+jeśli jest nowsza wersja → wyświetla powiadomienie:
+„Dostępna aktualizacja Calisto Vault (wersja X.X).”
+
+W ustawieniach:
+
+Automatyczne sprawdzanie aktualizacji: przełącznik ON/OFF.
+
+Ręczne sprawdzanie aktualizacji
+W ustawieniach:
+
+przycisk „Sprawdź dostępność aktualizacji”
+
+po kliknięciu aplikacja pobiera version.json z GitHub, porównuje wersję i wyświetla komunikat:
+
+„Twoja wersja jest aktualna”
+
+lub „Dostępna aktualizacja Calisto Vault (wersja X.X).”
+
+Instalacja aktualizacji
+Użytkownik:
+
+pobiera nowy EXE (Windows) lub APK (Android) z GitHub Releases,
+
+instaluje ręcznie.
+
+Aplikacja nie aktualizuje się sama — daje pełną kontrolę użytkownikowi.
+
+📘 Instrukcja użytkowania
+Instrukcja jest dostępna w aplikacji:
+
+Ustawienia → Informacje → Instrukcja użytkowania
+
+Zawiera:
+
+opis podstawowych funkcji,
+
+opis trybów działania,
+
+opis pendrive MASTER,
+
+opis synchronizacji P2P,
+
+opis bezpieczeństwa,
+
+opis aktualizacji aplikacji,
+
+opis logów diagnostycznych,
+
+FAQ,
+
+dane autora.
+
+🛡️ Bezpieczeństwo
+Calisto Vault zapewnia:
+
+AES‑256‑GCM
+
+Argon2id
+
+SQLCipher
+
+E2EE w synchronizacji
+
+brak chmury
+
+brak serwera
+
+brak telemetrii
+
+brak reklam
+
+brak analityki
+
+lokalne przetwarzanie danych
+
+Verified Build (brak malware, brak ukrytych procesów)
+
+⚖️ Informacje prawne
+Calisto Vault nie zbiera danych użytkownika.
+
+Calisto Vault nie wysyła danych do Internetu (poza sprawdzaniem aktualizacji z GitHub).
+
+Calisto Vault nie korzysta z chmury.
+
+Calisto Vault nie posiada własnego serwera.
+
+Wszystkie dane są szyfrowane lokalnie.
+
+Użytkownik ma pełną kontrolę nad swoimi danymi.
+
+👤 Autor
+Autor: CALISTO
+X: https://x.com/ABSURD__CORP  
+Email: calistoxmass@gmail.com
+
+📦 Instalacja
+Windows
+Pobierz CalistoVaultSetup.exe z GitHub Releases.
+
+Uruchom instalator.
+
+Przy pierwszym uruchomieniu wybierz tryb działania.
+
+Android
+Pobierz CalistoVault.apk z GitHub Releases.
+
+Zainstaluj na urządzeniu (włącz instalację z nieznanych źródeł, jeśli to konieczne).
+
+Przy pierwszym uruchomieniu wybierz tryb działania.
+
+❓ FAQ
+Czy aplikacja działa offline?  
+Tak, w pełni.
+
+Czy mogę używać tylko telefonu?  
+Tak — tryb Android solo.
+
+Czy mogę używać tylko komputera?  
+Tak — tryb Windows solo.
+
+Czy pendrive jest wymagany?  
+Nie — jest opcjonalny.
+
+Czy aplikacja jest bezpieczna?  
+Tak — pełne szyfrowanie, brak chmury, Verified Build.
+
+Czy aplikacja sama się aktualizuje?  
+Nie — informuje o aktualizacji, ale użytkownik instaluje ją ręcznie.
+
+Czy moje dane są wysyłane gdziekolwiek?  
+Nie — poza sprawdzaniem wersji aplikacji na GitHub, żadna treść haseł ani danych nie opuszcza urządzenia.
+
+🧩 Repozytorium
+Kod źródłowy, zadania AI i dokumentacja znajdują się w repozytorium GitHub projektu Calisto Vault.
