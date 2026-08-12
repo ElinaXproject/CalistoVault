@@ -6,12 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.calisto.vault.db.VaultDB
 import com.calisto.vault.db.Crud
 import com.calisto.vault.db.Entry
+import com.calisto.vault.db.Sync
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var crud: Crud
+    private lateinit var sync: Sync
+
     private lateinit var listView: ListView
     private lateinit var addButton: Button
+    private lateinit var syncButton: Button
+
     private lateinit var titleInput: EditText
     private lateinit var usernameInput: EditText
     private lateinit var passwordInput: EditText
@@ -23,9 +28,12 @@ class MainActivity : AppCompatActivity() {
 
         val db = VaultDB(this).open()
         crud = Crud(db)
+        sync = Sync()
 
         listView = findViewById(R.id.listView)
         addButton = findViewById(R.id.addButton)
+        syncButton = findViewById(R.id.syncButton)
+
         titleInput = findViewById(R.id.titleInput)
         usernameInput = findViewById(R.id.usernameInput)
         passwordInput = findViewById(R.id.passwordInput)
@@ -45,6 +53,19 @@ class MainActivity : AppCompatActivity() {
             crud.add(entry)
             Toast.makeText(this, "Zapisano!", Toast.LENGTH_SHORT).show()
             clearInputs()
+            refreshList()
+        }
+
+        syncButton.setOnClickListener {
+            val entries = crud.getAll()
+            sync.upload(entries)
+
+            val downloaded = sync.download()
+            downloaded.forEach {
+                crud.add(it)
+            }
+
+            Toast.makeText(this, "Synchronizacja zakończona!", Toast.LENGTH_SHORT).show()
             refreshList()
         }
 
