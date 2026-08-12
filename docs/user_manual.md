@@ -1,6 +1,6 @@
-# Calisto Vault — User Manual (Minimal)
+# Calisto Vault — Podręcznik użytkownika
 
-Instrukcja użytkownika będzie generowana automatycznie przez AI na podstawie modułów aplikacji.
-
-## Status
-Dokumentacja w przygotowaniu. AI wygeneruje pełną wersję po implementacji UI i funkcji.
+Aplikacja Calisto Vault służy do bezpiecznego przechowywania haseł i danych.
+- Uruchom aplikację.
+- Dodaj wpis (nazwa, login, hasło, notatka).
+- Wszystkie dane są szyfrowane lokalnie przez SQLCipher.
