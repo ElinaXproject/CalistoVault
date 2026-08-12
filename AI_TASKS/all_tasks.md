@@ -178,3 +178,79 @@ jest wieloplatformowa,
 jest profesjonalna,
 
 jest wizytówką autora.
+## AUTO_MODE (aktywny)
+
+AI ma samodzielnie generować wszystkie brakujące elementy projektu Calisto Vault:
+
+### Kod aplikacji
+- Windows (Electron)
+- Android (Kotlin)
+- Moduły shared (crypto, sync, updater)
+- SQLCipher (baza danych)
+- Logika haseł (CRUD)
+- Integracja pendrive MASTER
+- Synchronizacja P2P
+- System aktualizacji
+
+### Struktura projektu
+- Tworzenie folderów
+- Tworzenie plików
+- Uzupełnianie brakujących modułów
+- Rozbudowa istniejących plików
+
+### UI
+- Windows UI
+- Android UI
+- Style, layouty, komponenty
+
+### Dokumentacja
+- user_manual.md
+- developer_docs.md
+- API_docs.md
+
+### Zasady działania
+- AI działa automatycznie, bez pytania o zgodę.
+- AI kontynuuje generowanie kodu aż do pełnego ukończenia projektu.
+- AI może nadpisywać pliki, jeśli wymaga tego rozwój projektu.
+- AI może tworzyć nowe foldery i pliki według potrzeb.
+- AI ma pełną kontrolę nad procesem budowy Calisto Vault.
+## AUTO_MODE (aktywny)
+
+AI ma samodzielnie generować wszystkie brakujące elementy projektu Calisto Vault:
+
+### Kod aplikacji
+- Windows (Electron)
+- Android (Kotlin)
+- Moduły shared (crypto, sync, updater)
+- SQLCipher (baza danych)
+- Logika haseł (CRUD)
+- Integracja pendrive MASTER
+- Synchronizacja P2P
+- System aktualizacji
+
+### Struktura projektu
+- Tworzenie folderów
+- Tworzenie plików
+- Uzupełnianie brakujących modułów
+- Rozbudowa istniejących plików
+
+### UI
+- Windows UI
+- Android UI
+- Style, layouty, komponenty
+
+### Dokumentacja
+- user_manual.md
+- developer_docs.md
+- API_docs.md
+
+### Zasady działania
+- AI działa automatycznie, bez pytania o zgodę.
+- AI kontynuuje generowanie kodu aż do pełnego ukończenia projektu.
+- AI może nadpisywać pliki, jeśli wymaga tego rozwój projektu.
+- AI może tworzyć nowe foldery i pliki według potrzeb.
+- AI ma pełną kontrolę nad procesem budowy Calisto Vault.
+
+### Status
+AUTO_MODE jest aktywny — projekt ma być rozwijany automatycznie przez AI.
+
