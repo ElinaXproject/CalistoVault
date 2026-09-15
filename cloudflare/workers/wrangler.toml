@@ -3,7 +3,8 @@
 # DARMOWY plan Cloudflare obejmuje:
 # - 100,000 żądań/dzień do Workers
 # - 1GB pamięci KV Storage
-# - 100,000 operacji KV/dzień
+# - 10GB pamięci R2 Storage
+# - 1M operacji R2/miesiąc
 #
 # Więcej: https://developers.cloudflare.com/workers/platform/limits/
 
@@ -11,16 +12,32 @@ name = "calisto-vault-api"
 main = "api.js"
 compatibility_date = "2024-01-01"
 
-# KV Namespace - UTWÓRZ W CLOUDFLARE DASHBOARD!
+# ========== KV NAMESPACE (Metadane, ustawienia) ==========
+# UTWÓRZ W CLOUDFLARE DASHBOARD:
 # 1. Wejdź na: https://dash.cloudflare.com/
 # 2. Wybierz swoją domenę
-# 3. Workers & Pages -> KV -> Create namespace
-# 4. Skopiuj ID i wstaw poniżej
+# 3. Workers & Pages → KV → Create namespace
+# 4. Nazwij: DATA
+# 5. Skopiuj ID i wstaw poniżej
 [kv_namespaces]
 binding = "DATA"
 id = "YOUR_KV_NAMESPACE_ID_HERE"
 
-# Opcjonalnie: jeśli używasz R2 Storage (darmowy: 10GB)
-# [r2_buckets]
-# binding = "BUCKET"
-# bucket_name = "calisto-data"
+# ========== R2 BUCKET (Pliki: zdjęcia, filmy, PDF) ==========
+# UTWÓRZ W CLOUDFLARE DASHBOARD:
+# 1. Workers & Pages → R2 → Create bucket
+# 2. Nazwij: CALISTO_DATA
+# 3. Skopiuj nazwe bucketa (bez ID)
+[r2_buckets]
+binding = "CALISTO_DATA"
+bucket_name = "CALISTO_DATA"
+
+# ========== VARIABLES (Domena publiczna R2) ==========
+# Po utworzeniu bucketa, wejdź w ustawienia i włącz "Public Access"
+# Następnie dodaj zmienną R2_PUBLIC_DOMAIN
+[vars]
+R2_PUBLIC_DOMAIN = "YOUR_PUBLIC_DOMAIN.workers.dev"
+
+# ========== COMPATIBILITY ==========
+# Użyj nowszej wersji dla lepszej obsługi ES Modules
+compatibility_flags = ["nodejs_compat"]

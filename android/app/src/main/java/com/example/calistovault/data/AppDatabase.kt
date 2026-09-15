@@ -5,16 +5,23 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.calistovault.data.dao.DataDao
+import com.example.calistovault.data.dao.FileDao
 import com.example.calistovault.data.entity.DataEntity
+import com.example.calistovault.data.entity.FileEntity
 
+/**
+ * Baza danych Room dla Calisto Vault
+ * Przechowuje dane lokalnie (offline-first)
+ */
 @Database(
-    entities = [DataEntity::class],
-    version = 1,
+    entities = [DataEntity::class, FileEntity::class],
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     
     abstract fun dataDao(): DataDao
+    abstract fun fileDao(): FileDao
     
     companion object {
         @Volatile
