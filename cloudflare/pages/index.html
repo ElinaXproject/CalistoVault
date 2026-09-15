@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calisto Vault - Bezpieczny Menedżer Haseł</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Calisto Vault - darmowy, bezpieczny menedżer haseł z Android i Cloudflare. Pełne szyfrowanie, brak chmury, 100% prywatność.">
+</head>
+<body>
+    <header>
+        <h1>Calisto Vault</h1>
+        <p class="subtitle">Bezpieczny Menedżer Haseł</p>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h2>🔒 Twoje hasła, Twoja prywatność</h2>
+            <p>Calisto Vault to w pełni darmowy, offline'owy menedżer haseł z synchronizacją P2P i integracją z Cloudflare.</p>
+            <div class="cta-buttons">
+                <a href="#android" class="btn btn-primary">Pobierz na Android</a>
+                <a href="#features" class="btn btn-secondary">Zobacz funkcje</a>
+            </div>
+        </section>
+        
+        <section id="features" class="features">
+            <h2>✨ Funkcje</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>AES-256-GCM</h3>
+                    <p>Najwyższy poziom szyfrowania Twoich haseł.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Aplikacja Android</h3>
+                    <p>Nowoczesny interfejs z Jetpack Compose.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Cloudflare Workers</h3>
+                    <p>Szybka synchronizacja przez edge computing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Offline First</h3>
+                    <p>Wszystkie dane lokalnie, synchronizacja opcjonalna.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>P2P Sync</h3>
+                    <p>Synchronizacja bez serwera, bez chmury.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3>100% Darmowy</h3>
+                    <p>Brak subskrypcji, brak ukrytych kosztów.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="android" class="android-section">
+            <h2>📱 Aplikacja Android</h2>
+            <div class="android-content">
+                <div class="android-text">
+                    <p>Aplikacja Calisto Vault na Androida oferuje:</p>
+                    <ul>
+                        <li>✅ Przechowywanie haseł w zaszyfrowanej bazie Room</li>
+                        <li>✅ Synchronizacja z Cloudflare Workers (opcjonalnie)</li>
+                        <li>✅ Synchronizacja P2P między urządzeniami</li>
+                        <li>✅ Autofill API - automatyczne wypełnianie formularzy</li>
+                        <li>✅ Tryb offline - działa bez internetu</li>
+                        <li>✅ Ciemny motyw z akcentami fioletowo-złotymi</li>
+                    </ul>
+                    <div class="download-info">
+                        <p><strong>Wkrótce dostępne na GitHub Releases!</strong></p>
+                        <p>Buduj z źródeł: <code>./gradlew assembleRelease</code></p>
+                    </div>
+                </div>
+                <div class="android-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="mockup-header">Calisto Vault</div>
+                            <div class="mockup-content">
+                                <div class="mockup-item">
+                                    <div class="mockup-icon">🌐</div>
+                                    <div class="mockup-text">
+                                        <div>github.com</div>
+                                        <div>calisto123</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-item">
+                                    <div class="mockup-icon">📧</div>
+                                    <div class="mockup-text">
+                                        <div>email@example.com</div>
+                                        <div>P@ssw0rd!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mockup-footer">
+                                <button class="mockup-btn">+ Dodaj</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cloudflare-section">
+            <h2>☁️ Cloudflare Integracja</h2>
+            <div class="cloudflare-content">
+                <div class="cloudflare-item">
+                    <div class="cloudflare-icon">📄</div>
+                    <h3>Cloudflare Pages</h3>
+                    <p>Statyczna strona z dokumentacją. Szybkie wczytywanie dzięki globalnej sieci CDN Cloudflare.</p>
+                    <p><strong>Koszt:</strong> ✅ Darmowy (w ramach limitu 100,000 żądań/dzień)</p>
+                </div>
+                <div class="cloudflare-item">
+                    <div class="cloudflare-icon">⚡</div>
+                    <h3>Cloudflare Workers</h3>
+                    <p>Backend API jako serverless function. Niskie opóźnienia dzięki edge computing.</p>
+                    <p><strong>Koszt:</strong> ✅ Darmowy (100,000 żądań/dzień w darmowym planie)</p>
+                </div>
+                <div class="cloudflare-item">
+                    <div class="cloudflare-icon">💾</div>
+                    <h3>KV Storage</h3>
+                    <p>Przechowywanie danych w pamięci klucz-wartość. Idealne do synchronizacji.</p>
+                    <p><strong>Koszt:</strong> ✅ Darmowy (1GB pamięci, 100,000 operacji/dzień)</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pricing">
+            <h2>💰 Cennik</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <h3>Calisto Vault</h3>
+                    <div class="price">0 zł</div>
+                    <p>na zawsze</p>
+                    <ul>
+                        <li>✅ Aplikacja Android</li>
+                        <li>✅ Cloudflare Pages</li>
+                        <li>✅ Cloudflare Workers (100K req/dzień)</li>
+                        <li>✅ KV Storage (1GB)</li>
+                        <li>✅ Synchronizacja P2P</li>
+                        <li>✅ Pełne szyfrowanie</li>
+                        <li>✅ Brak reklam</li>
+                        <li>✅ Brak telemetrii</li>
+                        <li>✅ Open Source</li>
+                    </ul>
+                    <a href="#android" class="btn btn-primary">Zacznij teraz</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <h2>❓ FAQ</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Czy to jest naprawdę darmowe?</h3>
+                    <p>✅ Tak! Wszystkie używane technologie (Android SDK, Cloudflare Pages, Workers, KV Storage) mają darmowe plany, które w zupełności wystarczą dla większości użytkowników.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Czy moje dane są bezpieczne?</h3>
+                    <p>✅ Tak! Wszystkie dane są szyfrowane lokalnie (AES-256-GCM) przed wysłaniem. Cloudflare zapewnia HTTPS i ochronę DDoS.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Czy muszę używać Cloudflare?</h3>
+                    <p>❌ Nie! Aplikacja działa w 100% offline. Cloudflare to opcjonalna warstwa synchronizacji.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Czy jest wersja na iOS?</h3>
+                    <p>❌ Nie, obecnie tylko Android. iOS w planach na przyszłość.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 Calisto Vault. Wszelkie prawa zastrzeżone.</p>
+        <p>Autor: <a href="https://x.com/ABSURD__CORP" target="_blank">CALISTO</a></p>
+        <p><a href="https://github.com/ElinaXproject/CalistoVault" target="_blank">Kod źródłowy na GitHub</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

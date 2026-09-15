@@ -1,0 +1,46 @@
+# Calisto Vault - Git Ignore
+
+# Android
+android/.gradle
+android/build
+android/app/build
+android/app/.externalNativeBuild
+android/app/.cxx
+android/local.properties
+android/gradle.properties
+android/.idea
+android/*.iml
+android/*.ipr
+
+# Gradle
+.gradle
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cloudflare
+cloudflare/workers/node_modules/
+cloudflare/workers/.wrangler/
+
+# Logs
+*.log
+logs/
+
+# OS
+*.bak
+*.tmp

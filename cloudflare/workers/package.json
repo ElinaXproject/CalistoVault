@@ -1,0 +1,23 @@
+{
+  "name": "calisto-vault-workers",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers API for Calisto Vault - DARMOWY backend",
+  "main": "api.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "api",
+    "darmowy",
+    "free"
+  ],
+  "author": "CALISTO",
+  "license": "MIT"
+}

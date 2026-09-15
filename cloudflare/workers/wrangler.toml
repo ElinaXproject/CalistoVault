@@ -1,0 +1,26 @@
+# Cloudflare Workers Configuration for Calisto Vault
+# 
+# DARMOWY plan Cloudflare obejmuje:
+# - 100,000 żądań/dzień do Workers
+# - 1GB pamięci KV Storage
+# - 100,000 operacji KV/dzień
+#
+# Więcej: https://developers.cloudflare.com/workers/platform/limits/
+
+name = "calisto-vault-api"
+main = "api.js"
+compatibility_date = "2024-01-01"
+
+# KV Namespace - UTWÓRZ W CLOUDFLARE DASHBOARD!
+# 1. Wejdź na: https://dash.cloudflare.com/
+# 2. Wybierz swoją domenę
+# 3. Workers & Pages -> KV -> Create namespace
+# 4. Skopiuj ID i wstaw poniżej
+[kv_namespaces]
+binding = "DATA"
+id = "YOUR_KV_NAMESPACE_ID_HERE"
+
+# Opcjonalnie: jeśli używasz R2 Storage (darmowy: 10GB)
+# [r2_buckets]
+# binding = "BUCKET"
+# bucket_name = "calisto-data"

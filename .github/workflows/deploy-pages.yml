@@ -1,0 +1,31 @@
+name: Deploy Cloudflare Pages
+
+# Wdrażanie statycznej strony do Cloudflare Pages
+# DARMOWE: Cloudflare Pages ma darmowy plan z nieograniczoną liczbą stron
+# Limity: 100,000 żądań/dzień (wystarcza dla większości projektów)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'cloudflare/pages/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: "calisto-vault"
+          directory: "cloudflare/pages"
+          # Opcjonalnie: jeśli masz własną domenę
+          # gitHubConnection: "YOUR_GITHUB_CONNECTION_NAME"

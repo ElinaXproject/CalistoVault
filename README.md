@@ -1,267 +1,210 @@
-Calisto Vault to nowoczesny, bezpieczny i w pełni prywatny menedżer haseł działający na Windows i Android, z opcjonalnym wsparciem dla pendrive MASTER oraz synchronizacją P2P bez chmury. Aplikacja oferuje automatyczne i ręczne sprawdzanie aktualizacji, pełne szyfrowanie oraz tryby działania dopasowane do każdego użytkownika.
-
-🛡️ Calisto Vault — Bezpieczny Menedżer Haseł Offline
-Calisto Vault to wieloplatformowy system zarządzania hasłami zaprojektowany z myślą o prywatności, bezpieczeństwie i elastyczności.
-Aplikacja działa w różnych trybach — od pełnej konfiguracji Windows + Android + Pendrive MASTER, aż po tryby solo dla użytkowników, którzy chcą korzystać tylko z jednego urządzenia.
-
-⭐ Najważniejsze funkcje
-Szyfrowanie: AES‑256‑GCM
-
-KDF: Argon2id
-
-Baza danych: SQLCipher
-
-Pendrive MASTER: fizyczny klucz bezpieczeństwa
-
-Synchronizacja P2P: bez serwera, bez chmury
-
-Autofill na Androidzie
-
-Testowanie loginów
-
-Działanie offline
-
-Nowoczesny UI Windows + Android
-
-Logi diagnostyczne (w ustawieniach)
-
-Automatyczne i ręczne sprawdzanie aktualizacji aplikacji
-
-Tryby działania wybierane przy pierwszym uruchomieniu
-
-🔧 Tryby działania
-Przy pierwszym uruchomieniu użytkownik wybiera tryb:
-
-Pełny: Windows + Android + Pendrive MASTER
-
-Windows + Pendrive
-
-Android + Pendrive
-
-Windows solo
-
-Android solo
-
-Windows + Android (bez pendrive)
-
-Każdy tryb działa niezależnie i bezpiecznie.
-
-💾 Pendrive MASTER
-Pendrive MASTER:
-
-przechowuje zaszyfrowaną bazę SQLCipher,
-
-przechowuje klucz master.key,
-
-umożliwia przywracanie danych,
-
-integruje się z Windows i Android (OTG),
-
-może być głównym źródłem danych w trybie pełnym.
-
-🔄 Synchronizacja P2P
-Synchronizacja P2P:
-
-działa bez serwera i bez chmury,
-
-wykorzystuje E2EE,
-
-może działać lokalnie lub przez Internet,
-
-automatycznie wykrywa zmiany,
-
-rozwiązuje konflikty w bezpieczny sposób.
-
-🖥️ Aplikacja Windows
-Electron + Node.js
-
-ciemny motyw, fiolet + złoto
-
-lista haseł + szczegóły
-
-testowanie loginów
-
-integracja z pendrive MASTER
-
-synchronizacja P2P
-
-logi diagnostyczne
-
-sekcja: Informacje / Bezpieczeństwo / Autor
-
-automatyczne i ręczne sprawdzanie aktualizacji
-
-📱 Aplikacja Android
-Kotlin
-
-Autofill API
-
-ciemny motyw, fiolet + złoto
-
-lista haseł w formie kart
-
-szczegóły wpisu z dużymi polami
-
-synchronizacja P2P
-
-integracja z pendrive MASTER (OTG)
-
-sekcja: Informacje / Bezpieczeństwo / Autor
-
-automatyczne i ręczne sprawdzanie aktualizacji
-
-🎨 UI — Windows i Android
-nowoczesny, lekki, bez animacji
-
-ciemny motyw
-
-białe napisy
-
-akcenty: fiolet + złoto
-
-minimalistyczne ikony
-
-zbliżony układ na Windows i Android, żeby użytkownik czuł się „u siebie” na obu platformach.
-
-🔔 Aktualizacje aplikacji (EXE/APK)
-Calisto Vault obsługuje aktualizacje aplikacji, nie bazy haseł.
-
-Automatyczne sprawdzanie aktualizacji
-aplikacja okresowo pobiera z GitHub plik version.json,
-
-porównuje wersję lokalną z wersją dostępną,
-
-jeśli jest nowsza wersja → wyświetla powiadomienie:
-„Dostępna aktualizacja Calisto Vault (wersja X.X).”
-
-W ustawieniach:
-
-Automatyczne sprawdzanie aktualizacji: przełącznik ON/OFF.
-
-Ręczne sprawdzanie aktualizacji
-W ustawieniach:
-
-przycisk „Sprawdź dostępność aktualizacji”
-
-po kliknięciu aplikacja pobiera version.json z GitHub, porównuje wersję i wyświetla komunikat:
-
-„Twoja wersja jest aktualna”
-
-lub „Dostępna aktualizacja Calisto Vault (wersja X.X).”
-
-Instalacja aktualizacji
-Użytkownik:
-
-pobiera nowy EXE (Windows) lub APK (Android) z GitHub Releases,
-
-instaluje ręcznie.
-
-Aplikacja nie aktualizuje się sama — daje pełną kontrolę użytkownikowi.
-
-📘 Instrukcja użytkowania
-Instrukcja jest dostępna w aplikacji:
-
-Ustawienia → Informacje → Instrukcja użytkowania
-
-Zawiera:
-
-opis podstawowych funkcji,
-
-opis trybów działania,
-
-opis pendrive MASTER,
-
-opis synchronizacji P2P,
-
-opis bezpieczeństwa,
-
-opis aktualizacji aplikacji,
-
-opis logów diagnostycznych,
-
-FAQ,
-
-dane autora.
-
-🛡️ Bezpieczeństwo
-Calisto Vault zapewnia:
-
-AES‑256‑GCM
-
-Argon2id
-
-SQLCipher
-
-E2EE w synchronizacji
-
-brak chmury
-
-brak serwera
-
-brak telemetrii
-
-brak reklam
-
-brak analityki
-
-lokalne przetwarzanie danych
-
-Verified Build (brak malware, brak ukrytych procesów)
-
-⚖️ Informacje prawne
-Calisto Vault nie zbiera danych użytkownika.
-
-Calisto Vault nie wysyła danych do Internetu (poza sprawdzaniem aktualizacji z GitHub).
-
-Calisto Vault nie korzysta z chmury.
-
-Calisto Vault nie posiada własnego serwera.
-
-Wszystkie dane są szyfrowane lokalnie.
-
-Użytkownik ma pełną kontrolę nad swoimi danymi.
-
-👤 Autor
-Autor: CALISTO
-X: https://x.com/ABSURD__CORP  
-Email: calistoxmass@gmail.com
-
-📦 Instalacja
-Windows
-Pobierz CalistoVaultSetup.exe z GitHub Releases.
-
-Uruchom instalator.
-
-Przy pierwszym uruchomieniu wybierz tryb działania.
-
-Android
-Pobierz CalistoVault.apk z GitHub Releases.
-
-Zainstaluj na urządzeniu (włącz instalację z nieznanych źródeł, jeśli to konieczne).
-
-Przy pierwszym uruchomieniu wybierz tryb działania.
-
-❓ FAQ
-Czy aplikacja działa offline?  
-Tak, w pełni.
-
-Czy mogę używać tylko telefonu?  
-Tak — tryb Android solo.
-
-Czy mogę używać tylko komputera?  
-Tak — tryb Windows solo.
-
-Czy pendrive jest wymagany?  
-Nie — jest opcjonalny.
-
-Czy aplikacja jest bezpieczna?  
-Tak — pełne szyfrowanie, brak chmury, Verified Build.
-
-Czy aplikacja sama się aktualizuje?  
-Nie — informuje o aktualizacji, ale użytkownik instaluje ją ręcznie.
-
-Czy moje dane są wysyłane gdziekolwiek?  
-Nie — poza sprawdzaniem wersji aplikacji na GitHub, żadna treść haseł ani danych nie opuszcza urządzenia.
-
-🧩 Repozytorium
-Kod źródłowy, zadania AI i dokumentacja znajdują się w repozytorium GitHub projektu Calisto Vault.
+# 🚀 Calisto Vault - Android + Cloudflare Project
+
+**Nowoczesny projekt łączący aplikację Android z Cloudflare (Pages + Workers) dla maksymalnej wydajności.**
+
+---
+
+## 📱 Android App
+
+Aplikacja mobilna zbudowana w **Kotlin**, z:
+- Nowoczesnym UI (Jetpack Compose)
+- Obsługą autentykacji
+- Integracją z Cloudflare Workers API
+- Offline-first z lokalną bazą danych (Room)
+- Synchronizacją w tle
+
+## ☁️ Cloudflare
+
+### Pages
+- **Statyczna strona** (landing page, dokumentacja)
+- Szybkie wczytywanie dzięki globalnej sieci CDN
+- Automatyczne wdrażanie z GitHub
+
+### Workers
+- **Backend API** (serverless)
+- Obsługa żądań HTTP/HTTPS
+- Integracja z KV Storage (pamięć klucz-wartość)
+- Szybkość i niskie opóźnienia (edge computing)
+
+## 🛠️ Technologie
+
+| Komponent | Technologia |
+|-----------|------------|
+| Android App | Kotlin, Jetpack Compose, Room |
+| Cloudflare Pages | HTML/CSS/JS, React (opcjonalnie) |
+| Cloudflare Workers | JavaScript/TypeScript, KV Storage |
+| CI/CD | GitHub Actions |
+| Monitoring | Cloudflare Analytics |
+
+## 📁 Struktura Projektu
+
+```
+CalistoVault/
+├── android/
+│   └── app/
+│       ├── src/main/java/...      # Kod Kotlin
+│       ├── src/main/res/          # Zasoby (layouty, ikony)
+│       ├── build.gradle            # Konfiguracja Gradle
+│       └── settings.gradle         # Ustawienia projektu
+│
+├── cloudflare/
+│   ├── pages/                     # Statyczna strona (HTML/CSS/JS)
+│   │   ├── index.html
+│   │   ├── styles.css
+│   │   └── script.js
+│   └── workers/                   # Cloudflare Workers
+│       ├── api.js                 # Główne API
+│       ├── auth.js                # Autentykacja
+│       └── kv-utils.js            # Narzędzia KV Storage
+│
+├── .github/
+│   └── workflows/                 # GitHub Actions
+│       ├── deploy-pages.yml       # Wdrażanie Pages
+│       └── deploy-workers.yml      # Wdrażanie Workers
+│
+├── README.md                      # Dokumentacja
+└── package.json                   # Zależności (dla Workers)
+```
+
+## 🚀 Szybki Start
+
+### 1. Android App
+
+```bash
+# Otwórz projekt w Android Studio
+cd android
+./gradlew build
+```
+
+### 2. Cloudflare Pages
+
+```bash
+# Wdróż statyczną stronę
+cd cloudflare/pages
+# Skonfiguruj w Cloudflare Dashboard:
+# 1. Utwórz projekt Pages
+# 2. Podłącz repozytorium GitHub
+# 3. Wybierz folder: `cloudflare/pages`
+```
+
+### 3. Cloudflare Workers
+
+```bash
+# Zainstaluj Wrangler CLI
+npm install -g wrangler
+
+# Zaloguj się do Cloudflare
+wrangler login
+
+# Wdróż Worker
+cd cloudflare/workers
+wrangler deploy
+```
+
+## 🔧 Konfiguracja
+
+### Android (app/build.gradle)
+```gradle
+android {
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.example.calistovault"
+        minSdk 24
+        targetSdk 34
+    }
+}
+
+dependencies {
+    implementation "androidx.compose.material:material:1.6.0"
+    implementation "androidx.room:room-runtime:2.6.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+}
+```
+
+### Cloudflare Workers (wrangler.toml)
+```toml
+name = "calisto-api"
+main = "api.js"
+compatibility_date = "2024-01-01"
+
+[kv_namespaces]
+binding = "DATA"
+id = "YOUR_KV_NAMESPACE_ID"
+```
+
+## 🌐 API Endpoints
+
+| Endpoint | Metoda | Opis |
+|----------|--------|------|
+| `/api/data` | GET | Pobierz dane z KV Storage |
+| `/api/data` | POST | Zapisz dane do KV Storage |
+| `/api/auth` | POST | Autentykacja użytkownika |
+
+## 📦 Wdrażanie CI/CD
+
+### GitHub Actions - Cloudflare Pages
+```yaml
+name: Deploy Cloudflare Pages
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'cloudflare/pages/**'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: "calisto-pages"
+          directory: "cloudflare/pages"
+```
+
+### GitHub Actions - Cloudflare Workers
+```yaml
+name: Deploy Cloudflare Workers
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'cloudflare/workers/**'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g wrangler
+      - run: cd cloudflare/workers && wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+```
+
+## 🔐 Bezpieczeństwo
+
+- ✅ Wszystkie żądania przez HTTPS
+- ✅ Autentykacja JWT (Cloudflare Workers)
+- ✅ CORS skonfigurowany dla Twojej domeny
+- ✅ KV Storage z szyfrowaniem (opcjonalnie)
+- ✅ Rate limiting w Workers
+
+## 📊 Monitorowanie
+
+- [Cloudflare Analytics](https://dash.cloudflare.com/) - Statystyki Pages
+- [Workers Analytics](https://dash.cloudflare.com/) - Logi i metryki API
+- GitHub Actions - Logi wdrażania
+
+## 🤝 Autor
+
+**CALISTO**
+- X: [@ABSURD__CORP](https://x.com/ABSURD__CORP)
+- Email: calistoxmass@gmail.com
+
+## 📄 Licencja
+
+MIT License - Wolne użycie, modyfikacja i dystrybucja.
